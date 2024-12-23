@@ -8,6 +8,7 @@ class NbcampGithubActionsCicdExampleApplicationTests {
 
     @Test
     void contextLoads() {
+        throw new RuntimeException();
     }
 
 }
