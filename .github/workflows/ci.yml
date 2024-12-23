@@ -37,3 +37,9 @@ jobs:
 
       - name: Run tests with Gradle # Gradle 을 통해 테스트
         run: ./gradlew test --no-daemon
+
+      - name: Publish Test Report # Test 후 Report 생성
+        uses: mikepenz/action-junit-report@v4
+        if: success() || failure() # 이전 Step이 실패해도 실행하게끔
+        with:
+          report_paths: '**/build/test-results/test/TEST-*.xml'
